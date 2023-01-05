@@ -4,11 +4,19 @@ import HeartIcon from "../../icons/HeartIcon";
 import StartIcon from "../../icons/StartIcon";
 import './post-list-item.css'
 
-const PostListItem = () => {
+export type PostListItemPropsType = {
+    label: string,
+    important: boolean
+}
+const PostListItem = (props: PostListItemPropsType) => {
+    let classNames = 'app-list-item d-flex justify-content-between'
+    if (props.important) {
+        classNames += ' important'
+    }
     return (
-        <li className="app-list-item d-flex justify-content-between">
+        <li className={classNames}>
             <span className="app-list-item-label">
-             Hello
+            {props.label}
             </span>
             <div className="d-flex justify-content-center align-item-center">
                 <button
