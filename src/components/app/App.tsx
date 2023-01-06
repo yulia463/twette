@@ -9,21 +9,25 @@ import PostAddForm from "../post-add-form/PostAddForm";
 export type PostType = {
     label: string,
     important: boolean
+    id: number
 }
 
-function App() {
-    const data:Array<PostType> = [
+export function App() {
+    const data: Array<PostType> = [
         {
             label: 'Going to learn React',
-            important: true
+            important: true,
+            id: 1
         },
         {
             label: 'That is so good',
-            important: false
+            important: false,
+            id: 2
         },
         {
             label: 'I need a break...',
-            important: false
+            important: false,
+            id: 3
         }
     ]
     return (

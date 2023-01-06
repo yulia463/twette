@@ -14,7 +14,7 @@ const PostListItem = (props: PostListItemPropsType) => {
         classNames += ' important'
     }
     return (
-        <li className={classNames}>
+        <div className={classNames}>
             <span className="app-list-item-label">
             {props.label}
             </span>
@@ -31,7 +31,7 @@ const PostListItem = (props: PostListItemPropsType) => {
                 </button>
                 <HeartIcon/>
             </div>
-        </li>
+        </div>
     )
 }
 export default PostListItem;

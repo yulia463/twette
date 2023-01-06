@@ -2,16 +2,23 @@ import React from "react";
 import PostListItem from "../post-list-item/post-list-item";
 import './post-list.css'
 import {PostType} from "../app/App";
-export type PostListPropsType={
-    posts:Array<PostType>
+import postListItem from "../post-list-item/post-list-item";
+
+export type PostListPropsType = {
+    posts: Array<PostType>
 
 }
-const PostList = (props:PostListPropsType) => {
+const PostList = (props: PostListPropsType) => {
+    const elements = props.posts.map((el) => {
+        return (
+            <li key={el.id} className="list-group-item">
+                <PostListItem {...el}/>
+            </li>
+        )
+    })
     return (
         <ul className="app-list list-group">
-            <PostListItem  important={props.posts[0].important} label={props.posts[0].label}/>
-            <PostListItem important={false} label='That is so good'/>
-            <PostListItem important={false} label='I need a break...'/>
+            {elements}
         </ul>
     )
 };
