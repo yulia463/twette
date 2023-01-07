@@ -2,7 +2,6 @@ import React from "react";
 import PostListItem from "../post-list-item/post-list-item";
 import './post-list.css'
 import {PostType} from "../app/App";
-import postListItem from "../post-list-item/post-list-item";
 
 export type PostListPropsType = {
     posts: Array<PostType>
